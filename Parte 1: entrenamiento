@@ -1,0 +1,18 @@
+#Red neuronal usando TensorFlow y Keras
+import tensorflow as tf #libreria para usar las redes
+import numpy as np
+import matplotlib.pyplot as plt
+#Datos para el entrenamiento
+celsius=np.array([-40,-10,0,8,15,22,38],dtype=float)
+farenh=np.array([-40,14,32,46.4,59,71.6,100.4],dtype=float)
+#Capa de red neuronal
+capa=tf.keras.layers.Dense(units=1,input_shape=[1])
+modelo=tf.keras.Sequential([capa])
+modelo.compile(
+    optimizer=tf.keras.optimizers.Adam(0.1),
+    loss='mean_squared_error'
+)
+#Entrenamiento de la red
+print("Comenzando entrenamiento...")
+historial=modelo.fit(celsius,farenh, epochs=1000,verbose=False)
+print("Modelo entrenado!")
