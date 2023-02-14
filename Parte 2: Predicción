@@ -1,0 +1,5 @@
+#Predicción
+print("Predicción")
+valor=float(input("Grados Centigrados: "))
+resultado=modelo.predict([valor])
+print(valor, "°C es aproximadamente ",resultado,"°F")
