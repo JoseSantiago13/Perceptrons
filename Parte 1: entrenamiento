@@ -16,3 +16,7 @@ modelo.compile(
 print("Comenzando entrenamiento...")
 historial=modelo.fit(celsius,farenh, epochs=1000,verbose=False)
 print("Modelo entrenado!")
+#se muestran las graficas de la magnitud de error vs iteraciones del modelo. 
+plt.xlabel("Iteraciones")
+plt.ylabel("Magnitud del error")
+plt.plot(historial.history["loss"])
